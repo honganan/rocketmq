@@ -46,6 +46,10 @@ import org.slf4j.LoggerFactory;
 
 import static org.apache.rocketmq.remoting.netty.TlsSystemConfig.TLS_ENABLE;
 
+/**
+ * broker的启动类
+ * comment: honganan
+ */
 public class BrokerStartup {
     public static Properties properties = null;
     public static CommandLine commandLine = null;
@@ -207,6 +211,12 @@ public class BrokerStartup {
             // remember all configs to prevent discard
             controller.getConfiguration().registerConfig(properties);
 
+            /*
+             * broker启动的核心:
+             * 初始化controller，包括配置初始化，各种线程和定时任务初始化
+             * comments: honganan
+             *
+             */
             boolean initResult = controller.initialize();
             if (!initResult) {
                 controller.shutdown();

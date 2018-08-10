@@ -59,6 +59,7 @@ public class QueueData implements Comparable<QueueData> {
         this.topicSynFlag = topicSynFlag;
     }
 
+    // TODO: 不明觉厉
     @Override
     public int hashCode() {
         final int prime = 31;

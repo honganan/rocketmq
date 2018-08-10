@@ -60,9 +60,14 @@ import org.slf4j.LoggerFactory;
 
 import static org.apache.rocketmq.store.config.BrokerRole.SLAVE;
 
+/**
+ * 默认的消息存储服务
+ *
+ * comments：honganan
+ */
 public class DefaultMessageStore implements MessageStore {
     private static final Logger log = LoggerFactory.getLogger(LoggerName.STORE_LOGGER_NAME);
-
+    // 消息存储的相关配置
     private final MessageStoreConfig messageStoreConfig;
     // CommitLog
     private final CommitLog commitLog;
@@ -74,7 +79,7 @@ public class DefaultMessageStore implements MessageStore {
     private final CleanCommitLogService cleanCommitLogService;
 
     private final CleanConsumeQueueService cleanConsumeQueueService;
-
+    // 建索引服务
     private final IndexService indexService;
 
     private final AllocateMappedFileService allocateMappedFileService;
@@ -99,15 +104,15 @@ public class DefaultMessageStore implements MessageStore {
     private final BrokerConfig brokerConfig;
 
     private volatile boolean shutdown = true;
-
+    // TODO: ?
     private StoreCheckpoint storeCheckpoint;
 
     private AtomicLong printTimes = new AtomicLong(0);
-
+    // TODO: ?
     private final LinkedList<CommitLogDispatcher> dispatcherList;
-
+    // TODO: ?
     private RandomAccessFile lockFile;
-
+    // TODO: ?
     private FileLock lock;
 
     boolean shutDownNormal = false;

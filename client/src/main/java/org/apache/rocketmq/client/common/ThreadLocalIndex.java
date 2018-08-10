@@ -19,6 +19,9 @@ package org.apache.rocketmq.client.common;
 
 import java.util.Random;
 
+/**
+ * 递增取序号工具，第一次随机，后面每次递增
+ */
 public class ThreadLocalIndex {
     private final ThreadLocal<Integer> threadLocalIndex = new ThreadLocal<Integer>();
     private final Random random = new Random();

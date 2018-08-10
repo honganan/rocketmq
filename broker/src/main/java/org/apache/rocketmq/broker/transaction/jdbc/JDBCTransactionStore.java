@@ -34,6 +34,10 @@ import org.apache.rocketmq.common.constant.LoggerName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * JDBC事务存储，用jdbc数据库存储实现事务的持久化属性
+ * comment: honganan
+ */
 public class JDBCTransactionStore implements TransactionStore {
     private static final Logger log = LoggerFactory.getLogger(LoggerName.TRANSACTION_LOGGER_NAME);
     private final JDBCTransactionStoreConfig jdbcTransactionStoreConfig;

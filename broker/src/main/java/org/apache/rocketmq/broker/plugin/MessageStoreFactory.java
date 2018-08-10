@@ -21,6 +21,14 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import org.apache.rocketmq.store.MessageStore;
 
+/**
+ * 消息存储插件加载，如果有插件加载后形成链式结构，插件有共同父类AbstractPluginMessageStore，链式结构如：
+ * AbstractPluginMessageStore
+ *   private MessageStore next;
+ *
+ * // TODO: 消息存储支持插件，MessageStorePlugIn怎么用？
+ *
+ */
 public final class MessageStoreFactory {
     public final static MessageStore build(MessageStorePluginContext context, MessageStore messageStore)
         throws IOException {

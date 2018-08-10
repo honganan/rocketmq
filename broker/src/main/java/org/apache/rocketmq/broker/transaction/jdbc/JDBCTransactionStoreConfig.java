@@ -17,6 +17,7 @@
 
 package org.apache.rocketmq.broker.transaction.jdbc;
 
+// TODO: 配置信息只能写死在java文件 ?
 public class JDBCTransactionStoreConfig {
     private String jdbcDriverClass = "com.mysql.jdbc.Driver";
     private String jdbcURL = "jdbc:mysql://xxx.xxx.xxx.xxx:1000/xxx?useUnicode=true&characterEncoding=UTF-8";
